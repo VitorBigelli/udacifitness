@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { getMetricMetaInfo, timeToString, getDailyReminderValue } from '../utils/helpers'; 
 import UdaciSlider from './UdaciSlider';
 import UdaciSteppers from './UdaciSteppers';
@@ -9,6 +9,7 @@ import TextButton from './TextButton';
 import { submitEntry, removeEntry } from '../utils/api.js';
 import { receiveEntries, addEntry } from '../actions'
 import { connect } from 'react-redux'
+import * as colors from '../utils/colors'
 
 function SubmitBtn ({onPress}) {
 	return (
@@ -102,7 +103,7 @@ class AddEntry extends Component {
 
 		if (this.props.alreadyLogged) {
 			return (
-				<View>
+				<View style={styles.container}>
 					<Ionicons 
 						name="ios-happy-outline"
 						size={100}
@@ -116,7 +117,7 @@ class AddEntry extends Component {
 		}
 
 		return (
-			<View> 
+			<ScrollView> 
 				<DateHeader date={(new Date()).toLocaleDateString()} />
 
 				{Object.keys(metaInfo).map((key) => {
@@ -146,7 +147,7 @@ class AddEntry extends Component {
 				})}	
 
 				<SubmitBtn onPress={this.submit} />		
-			</View>
+			</ScrollView>
 		)
 	}
 }

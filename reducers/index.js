@@ -4,15 +4,15 @@ function entries (state = {}, action) {
 	switch(action.type) {
 		case RECEIVE_ENTRIES: 
 			return {
-				..state,
+				...state,
 				...action.entries				
 			}
 		case ADD_ENTRY: 
 			return {
-				..state,
+				...state,
 				...action.entry
 			}
-		case default: 
+		default: 
 			return state		
 	}
 }
