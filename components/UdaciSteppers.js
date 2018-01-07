@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Platform, StyleSheet } from 'react-native'
 import { FontAwesome, Entypo } from '@expo/vector-icons'
 import { white, gray, purple } from '../utils/colors'
+
 export default function UdaciSteppers ({value, max, unit, step, onIncrement, onDecrement}) {
 	return (
 		<View style={[styles.row, {justifyContent: 'space-between'}]} >
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
 	},
 	iosBtn: {
 		backgroundColor: white, 
-		borderColor: gray, 
+		borderColor: purple, 
 		borderWidth: 1,
 		borderRadius: 3,
 		padding: 5, 
