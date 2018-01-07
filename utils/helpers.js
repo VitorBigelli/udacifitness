@@ -153,7 +153,6 @@ export function getDailyReminderValue () {
 
 const styles = StyleSheet.create({
   iconContainer: {
-    flex: 1,
     padding: 5, 
     borderRadius: 8, 
     height: 50,
